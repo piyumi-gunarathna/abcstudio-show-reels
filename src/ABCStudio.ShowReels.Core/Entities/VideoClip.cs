@@ -43,6 +43,7 @@ namespace ABCStudio.ShowReels.Core.Entities
             EndTimeCode = endTimeCode;
         }
 
+        public int Id { get; set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public VideoStandard Standard { get; private set; }
