@@ -21,4 +21,7 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\ABCStudio.ShowReels.Core\ABCStudio.ShowReels.Core.csproj" />
+  </ItemGroup>
 </Project>
