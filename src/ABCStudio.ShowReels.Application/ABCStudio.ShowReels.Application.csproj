@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ABCStudio.ShowReels.Core\ABCStudio.ShowReels.Core.csproj" />
+    <ProjectReference Include="..\ABCStudio.ShowReels.Infrastructure\ABCStudio.ShowReels.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
