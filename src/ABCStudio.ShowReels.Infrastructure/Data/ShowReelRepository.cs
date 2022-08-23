@@ -5,7 +5,6 @@ using static ABCStudio.ShowReels.Infrastructure.Data.ShowReelRepository;
 
 namespace ABCStudio.ShowReels.Infrastructure.Data
 {
-
     public class ShowReelRepository : IShowReelRepository
     {
         private readonly ShowReelsDbContext _dbContext;
