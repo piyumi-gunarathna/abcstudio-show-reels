@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ShowReel } from 'src/app/models/show-reel';
 
 @Component({
   selector: 'app-show-reel-list-item',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-reel-list-item.component.css']
 })
 export class ShowReelListItemComponent implements OnInit {
+  @Input() showReel?:ShowReel;
 
   constructor() { }
 

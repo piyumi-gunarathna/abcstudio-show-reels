@@ -4,8 +4,8 @@ export class VideoClip {
     constructor(
         public name: string,
         public description: string,
-        public videoDefinition: number,
-        public videoStandard: number,
+        public definition: number,
+        public standard: number,
         public startTimeCode: TimeCode,
         public endTimeCode: TimeCode
     ) {}

@@ -1,7 +1,8 @@
 
 
-<ul class="list-group" >
+<ul class="list-group" *ngFor="let showReel of showReels">
     <li class="list-group-item">
-         <div></div>
+        <app-show-reel-list-item [showReel]="showReel"></app-show-reel-list-item>
     </li>
 </ul>
+
