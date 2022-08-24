@@ -1,8 +1,11 @@
-
+<div class="row">
+    <div class="col-md-12 text-right">
+        <button type="button" class="btn btn-primary" routerLink="/new-show-reel" >Create New Reel</button>
+    </div>
+</div>
 
 <ul class="list-group" *ngFor="let showReel of showReels">
     <li class="list-group-item">
         <app-show-reel-list-item [showReel]="showReel"></app-show-reel-list-item>
     </li>
 </ul>
-
