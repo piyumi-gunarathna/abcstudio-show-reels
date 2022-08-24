@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+    mssql:
+        image: "mcr.microsoft.com/azure-sql-edge"
+        environment:
+            MSSQL_SA_PASSWORD: 1qaz2wsx@
+            MSSQL_USER: sa
+            MSSQL_PID: Developer
+            ACCEPT_EULA: "Y"
+        ports:
+            - '1433:1433'
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "8080:8080"
+        depends_on:
+            - "mssql"
+
+    api:
+        build:
+            context: .
+            dockerfile: ABCStudio.ShowReels.Api/Dockerfile
+        restart: always
+        ports:
+            - "7106:80"
+        environment:
+            - ShowReelsConnection=Server=localhost,1433;Database=ABCStudioShowReels;User ID=sa;Password=1qaz2wsx@;
+        depends_on:
+            - "mssql"
+    web:
+        build:
+            context: .
+            dockerfile: ABCStudio.ShowReels.Web/Dockerfile
+        restart: always
+        ports:
+            - "4200:80"
+        depends_on:
+            - "api"

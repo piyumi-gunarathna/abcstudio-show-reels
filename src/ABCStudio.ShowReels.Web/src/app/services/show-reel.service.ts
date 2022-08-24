@@ -10,7 +10,7 @@ import { VideoClip } from '../models/video-clip';
 })
 export class ShowReelService {
 
-  private showReelApiUrl: string = "https://localhost:7106/api/";
+  private showReelApiUrl: string = "http://localhost:7106/api/";
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
