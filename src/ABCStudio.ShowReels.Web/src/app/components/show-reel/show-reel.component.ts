@@ -55,8 +55,8 @@ export class ShowReelComponent implements OnInit {
     var self = this;
     this.videoClips.disable();
 
-    this.videoDefinitions = [{ key: 'SD', value: 1 }, { key: 'HD', value: 2 }];
-    this.videoStandards = [{ key: 'PAL', value: 25 }, { key: 'NTSC', value: 30 }];
+    this.videoDefinitions = this.showReelService.getVideoDefinitions();
+    this.videoStandards = this.showReelService.getVideoStandards();
 
     this.showReelForm.get('videoStandard')?.valueChanges.subscribe(v => {
       if (parseInt(v ?? '') > 0) {

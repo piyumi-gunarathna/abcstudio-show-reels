@@ -1,3 +1,4 @@
+import { KeyValue } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
@@ -18,6 +19,14 @@ export class ShowReelService {
   };
   
   constructor(private httpClient: HttpClient) { 
+  }
+
+  getVideoDefinitions(): {key: string, value: number}[] {
+    return [{ key: 'SD', value: 1 }, { key: 'HD', value: 2 }];
+  }
+
+  getVideoStandards(): {key: string, value: number}[] {
+    return [{ key: 'PAL', value: 25 }, { key: 'NTSC', value: 30 }];
   }
   
   get(): Observable<ShowReel[]> {
