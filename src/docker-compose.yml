@@ -27,7 +27,7 @@ services:
         ports:
             - "7106:80"
         environment:
-            - ShowReelsConnection=Server=localhost,1433;Database=ABCStudioShowReels;User ID=sa;Password=1qaz2wsx@;
+            - ShowReelsConnection=Server=mssql,1433;Database=ABCStudioShowReels;User ID=sa;Password=1qaz2wsx@;
         depends_on:
             - "mssql"
     web:
