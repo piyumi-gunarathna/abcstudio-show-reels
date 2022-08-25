@@ -1,6 +1,33 @@
+<div class="jumbotron">
+    <p class="lead">{{showReel?.name}}</p>
+    <hr class="my-4">
+    <p>Description: {{showReel?.description}}</p>
+    <p>Video Standard: <button type="button" class="btn btn-success btn-sm">{{videoStandard}}</button>    Video Definition: <button type="button" class="btn btn-success btn-sm">{{videoDefinition}}</button> </p>
 
-<div>{{showReel?.name}}</div>
-<div>{{showReel?.description}}</div>
-<div>{{showReel?.videoStandard}}</div>
-<div>{{showReel?.videoDefinition}}</div>
+    <p>Clips</p>
+    <table class="table">
+        <tr scope="row">
+            <th>Name</th>
+            <th>Description</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+        <tr scope="row" *ngFor="let clip of showReel?.videoClips">
+            <td>{{clip.name}}</td>
+            <td>{{clip.description}}</td>
+            <td>
+                {{clip.startTimeCode.hours.toString().padStart(2, '0')}}:
+                {{clip.startTimeCode.minutes.toString().padStart(2, '0')}}:
+                {{clip.startTimeCode.seconds.toString().padStart(2, '0')}}:
+                {{clip.startTimeCode.frames.toString().padStart(2, '0')}}
+            </td>
+            <td>
+                {{clip.endTimeCode.hours.toString().padStart(2, '0')}}:
+                {{clip.endTimeCode.minutes.toString().padStart(2, '0')}}:
+                {{clip.endTimeCode.seconds.toString().padStart(2, '0')}}:
+                {{clip.endTimeCode.frames.toString().padStart(2, '0')}}
+            </td>
+        </tr>
+    </table>
+</div>
 

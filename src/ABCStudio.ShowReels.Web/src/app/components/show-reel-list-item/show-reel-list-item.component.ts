@@ -8,10 +8,24 @@ import { ShowReel } from 'src/app/models/show-reel';
 })
 export class ShowReelListItemComponent implements OnInit {
   @Input() showReel?:ShowReel;
+  @Input() videoDefinitions?: {key: string, value: number}[];
+  @Input() videoStandards?: {key: string, value: number}[];
 
-  constructor() { }
+  videoDefinition: string = '';
+  videoStandard: string = '';
+
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
+    console.log();
+    this.videoDefinition = this.videoDefinitions?.filter(vd => this.showReel?.videoDefinition && 
+      vd.value == this.showReel?.videoDefinition)[0].key ?? '';
+
+    
+    this.videoStandard = this.videoStandards?.filter(vs => this.showReel?.videoStandard && 
+      vs.value == this.showReel?.videoStandard)[0].key ?? '';
   }
 
 }

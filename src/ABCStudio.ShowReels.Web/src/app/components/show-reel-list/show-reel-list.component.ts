@@ -14,8 +14,12 @@ export class ShowReelListComponent implements OnInit {
     private showReelService: ShowReelService) { }
 
   showReels?: ShowReel[];
+  videoDefinitions?: {key: string, value: number}[];
+  videoStandards?: {key: string, value: number}[];
 
   ngOnInit(): void {
+    this.videoDefinitions = this.showReelService.getVideoDefinitions();
+    this.videoStandards = this.showReelService.getVideoStandards();
     this.showReelService.get().subscribe(response => {
       this.showReels = response;
     });

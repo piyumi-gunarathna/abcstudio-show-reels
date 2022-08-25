@@ -5,7 +5,7 @@
 </div>
 
 <ul class="list-group" *ngFor="let showReel of showReels">
-    <li class="list-group-item">
-        <app-show-reel-list-item [showReel]="showReel"></app-show-reel-list-item>
+    <li class="list-group-item mt-1">
+        <app-show-reel-list-item [showReel]="showReel" [videoDefinitions]="videoDefinitions" [videoStandards]="videoStandards"></app-show-reel-list-item>
     </li>
 </ul>
