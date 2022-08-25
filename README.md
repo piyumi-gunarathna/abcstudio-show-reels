@@ -8,6 +8,7 @@
 ## Running the code
 * To run Web app run `npm install` then `ng serve` in terminal from the path `src/ABCStudio.ShowReels.Web`.
 * To run Api run `dotnet run` from path `src/ABCStudio.ShowReels.Api`.
+* Open Web API  `https://localhost:7106/swagger/index.html`
 * Open Web app `http://localhost:4200` on the browser to view/create reels
 
 ## Run using `docker compose`
