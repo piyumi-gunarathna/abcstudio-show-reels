@@ -43,14 +43,14 @@ namespace ABCStudio.ShowReels.Application.Services
                         v.StartTimeCode.Minutes,
                         v.StartTimeCode.Seconds,
                         v.StartTimeCode.Frames,
-                        (int)v.Standard
+                        VideoStandardFrameRates.GetFrameRate(v.Standard)
                         ),
                     new TimeCode(
                         v.EndTimeCode.Hours,
                         v.EndTimeCode.Minutes,
                         v.EndTimeCode.Seconds,
                         v.EndTimeCode.Frames,
-                        (int)v.Standard
+                        VideoStandardFrameRates.GetFrameRate(v.Standard)
                         )
                 )).ToList();
 

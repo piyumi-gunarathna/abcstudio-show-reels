@@ -26,7 +26,7 @@ export class ShowReelService {
   }
 
   getVideoStandards(): {key: string, value: number}[] {
-    return [{ key: 'PAL', value: 25 }, { key: 'NTSC', value: 30 }];
+    return [{ key: 'PAL', value: 1 }, { key: 'NTSC', value: 2 }];
   }
   
   get(): Observable<ShowReel[]> {

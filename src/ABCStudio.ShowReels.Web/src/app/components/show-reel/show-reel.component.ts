@@ -48,7 +48,7 @@ export class ShowReelComponent implements OnInit {
     private router: Router) {
     this.frameRates.set(1, 25);
     this.frameRates.set(2, 30);
-    this.totalTime = new TimeCode(0, 0, 0, 0, 2);
+    this.totalTime = new TimeCode(0, 0, 0, 0, 25);
   }
 
   ngOnInit(): void {
@@ -59,6 +59,7 @@ export class ShowReelComponent implements OnInit {
     this.videoStandards = this.showReelService.getVideoStandards();
 
     this.showReelForm.get('videoStandard')?.valueChanges.subscribe(v => {
+      console.log(this.frameRates.get(parseInt(v ?? '')));
       if (parseInt(v ?? '') > 0) {
         this.totalTime = new TimeCode(0, 0, 0, 0, this.frameRates.get(parseInt(v ?? '')) ?? 0);
         self.videoClips.enable();
