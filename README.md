@@ -20,4 +20,6 @@
 ## Notes
 - This solution aims to provide a starting point for XML string validation without using specific XML parsing libraries or Regular Expressions.
 - Solution can extend or modify the XMLValidator class based on specific requirements or additional validation needs.
+- The following test cases were added:
+    - ValidXml_EmptyTags_ReturnsTrue
   
